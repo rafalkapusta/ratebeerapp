@@ -1,0 +1,108 @@
+.inputContainer {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.inputContainer--Score {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.inputForm {
+  grid-area: inputForm;
+  display: flex;
+  flex-direction: column;
+}
+
+.beerList {
+  grid-area: beerList;
+}
+.overallRating:not(:checked) > input,
+.fullnessRating:not(:checked) > input,
+.clarityRating:not(:checked) > input,
+.foamRating:not(:checked) > input{
+  display: none;
+}
+
+.fullnessRating:not(:checked) > label,
+.clarityRating:not(:checked) > label,
+.foamRating:not(:checked) > label {
+  float:right;
+  width:1em;
+  overflow:hidden;
+  white-space:nowrap;
+  cursor:pointer;
+  font-size:30px;
+  color:#ccc;
+}
+
+.overallRating:not(:checked) > label {
+  float:right;
+  width:1em;
+  overflow:hidden;
+  white-space:nowrap;
+  cursor:pointer;
+  font-size:90px;
+  color:#ccc;
+}
+
+.overallRating:not(:checked) > label:before,
+.fullnessRating:not(:checked) > label:before,
+.clarityRating:not(:checked) > label:before,
+.foamRating:not(:checked) > label:before {
+  content: '★ ';
+}
+
+.overallRating > input:checked ~ label,
+.fullnessRating > input:checked ~ label,
+.clarityRating > input:checked ~ label,
+.foamRating > input:checked ~ label {
+  color: #ffc700;
+}
+
+.overallRating:not(:checked) > label:hover,
+.overallRating:not(:checked) > label:hover ~ label,
+.fullnessRating:not(:checked) > label:hover,
+.fullnessRating:not(:checked) > label:hover ~ label,
+.clarityRating:not(:checked) > label:hover,
+.clarityRating:not(:checked) > label:hover ~ label,
+.foamRating:not(:checked) > label:hover,
+.foamRating:not(:checked) > label:hover ~ label {
+  color: #deb217;
+}
+
+/*.foamRating > input:checked + label:hover,
+.foamRating > input:checked + label:hover ~ label,
+.foamRating > input:checked ~ label:hover,
+.foamRating > input:checked ~ label:hover ~ label,
+.foamRating > label:hover ~ input:checked ~ label {
+  color: #c59b08;
+}*/
+
+.mainContainer {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto;
+  grid-template-areas:
+          'inputForm'
+          'beerList'
+;
+}
+
+@media screen and (min-width: 500px) {
+  .mainContainer{
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    grid-template-rows: auto;
+    grid-template-areas:
+            '. inputForm .'
+            '. beerList .'
+  ;
+  }
+  .inputForm--btn {
+    width: 33%;
+    margin: 0 auto;
+  }
+}
