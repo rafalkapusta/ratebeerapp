@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import './Home.scss';
 import firebase from '../Firebase/Firebase';
 import Beer from '../Beer/Beer'
-import LandingPage from "../Landing/Landing";
+// import LandingPage from "../Landing/Landing";
 
 class HomePage extends Component{
     state = {
@@ -37,7 +37,7 @@ class HomePage extends Component{
             overallRate: this.state.overallRate
         };
         beerRef.push(beer);
-        this.setState({name: '', brewery: '', foamRate: 1, clarityRate: 1, fullnessRate: 1,
+        this.setState({name: '', brewery: '', style: '', foamRate: 1, clarityRate: 1, fullnessRate: 1,
             aroma: '', taste: '', flaws: '', overallRate: 1})
     };
     componentDidMount() {
@@ -57,7 +57,7 @@ class HomePage extends Component{
                     foamRate: currentBeerData[beer].foamRate,
                     clarityRate: currentBeerData[beer].clarityRate,
                     fullnessRate: currentBeerData[beer].fullnessRate,
-                    aroma: currentBeerData[beer].style,
+                    aroma: currentBeerData[beer].aroma,
                     taste: currentBeerData[beer].taste,
                     flaws: currentBeerData[beer].flaws,
                     overallRate: currentBeerData[beer].overallRate
@@ -89,7 +89,7 @@ class HomePage extends Component{
                            onChange={this.handleChange}/>
                     <input type="text"
                            name='style'
-                           placeholder='brewery'
+                           placeholder='style'
                            value={this.state.style}
                            onChange={this.handleChange}/>
                     <div className='inputContainer' >
@@ -166,7 +166,6 @@ class HomePage extends Component{
                 <ul className='beerList'>
                     {beerData.map((beer,i) => <Beer key={i} beerList={beer} remove={this.removeBeer}/>)}
                 </ul>
-                <LandingPage arr={beerData}/>
             </div>
         )
     }

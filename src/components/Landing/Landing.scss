@@ -1,0 +1,97 @@
+@import "fonts/fontawesome.scss";
+@import "fonts/solid.scss";
+@import "fonts/brands.scss";
+
+.mainContainer {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto;
+  grid-template-areas:
+          'inputForm'
+          'beerList'
+;
+}
+
+.searchForm {
+  grid-area: searchForm;
+  display: flex;
+  justify-content: space-between;
+}
+
+.inputForm {
+  flex-grow: 2;
+}
+
+.inputButton {
+  flex-grow: .5;
+  margin-left: 20px;
+}
+
+.beerList {
+  list-style: none;
+}
+
+.beerListName {
+  &:before {
+    @include fa-icon;
+    @extend  .fas;
+    content: fa-content($fa-var-beer);
+    color: #deb217;
+    margin-right: 20px;
+  }
+}
+
+.retrieveFoamRating {
+  display: flex;
+  align-items: center;
+}
+
+.overallRating:not(:checked) > input,
+.fullnessRating:not(:checked) > input,
+.clarityRating:not(:checked) > input,
+.retrieveFoamRating:not(:checked) > input{
+  display: none;
+}
+
+.fullnessRating:not(:checked) > label,
+.clarityRating:not(:checked) > label,
+.retrieveFoamRating:not(:checked) > label {
+  float:right;
+  width:1em;
+  overflow:hidden;
+  white-space:nowrap;
+  cursor:pointer;
+  font-size:30px;
+  color:#ccc;
+}
+
+.overallRating:not(:checked) > label:before,
+.fullnessRating:not(:checked) > label:before,
+.clarityRating:not(:checked) > label:before,
+.retrieveFoamRating:not(:checked) > label:before {
+  content: '★ ';
+}
+
+.overallRating > input:checked ~ label,
+.fullnessRating > input:checked ~ label,
+.clarityRating > input:checked ~ label,
+.retrieveFoamRating > input:checked ~ label {
+  color: #ffc700;
+}
+
+@media screen and (min-width: 500px) {
+  .mainContainer{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: auto;
+    grid-template-areas:
+            'searchForm searchForm searchForm'
+            '. beerList .'
+  ;
+  }
+  /*.inputForm--btn {
+    width: 33%;
+    margin: 0 auto;
+  }*/
+}
+
