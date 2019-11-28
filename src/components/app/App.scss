@@ -1,3 +1,4 @@
+/*
 .App {
   text-align: center;
 }
@@ -20,3 +21,20 @@
 .App-link {
   color: #09d3ac;
 }
+*/
+
+.App_userPhoto {
+  width: 3em;
+  height: 3em;
+  margin-right: 20px;
+}
+
+.App_login {
+  display: flex;
+  justify-content: space-between;
+}
+
+/*
+.App_login-btn {
+  margin-left: 20px;
+}*/

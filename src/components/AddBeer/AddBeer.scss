@@ -2,37 +2,37 @@
 @import "../../fonts/solid.scss";
 @import "../../fonts/brands.scss";
 
-.Home_inputContainer {
+.AddBeer_inputContainer {
   display: flex;
   justify-content: space-around;
   align-items: center;
 }
 
-.Home_inputContainer--Score {
+.AddBeer_inputContainer--Score {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-.Home_inputForm {
+.AddBeer_inputForm {
   grid-area: inputForm;
   display: flex;
   flex-direction: column;
 }
 
-.Home_beerList {
+.AddBeer_beerList {
   grid-area: beerList;
 }
-.Home_overallRating:not(:checked) > input,
-.Home_fullnessRating:not(:checked) > input,
-.Home_clarityRating:not(:checked) > input,
-.Home_foamRating:not(:checked) > input{
+.AddBeer_overallRating:not(:checked) > input,
+.AddBeer_fullnessRating:not(:checked) > input,
+.AddBeer_clarityRating:not(:checked) > input,
+.AddBeer_foamRating:not(:checked) > input{
   display: none;
 }
 
-.Home_fullnessRating:not(:checked) > label,
-.Home_clarityRating:not(:checked) > label,
-.Home_foamRating:not(:checked) > label {
+.AddBeer_fullnessRating:not(:checked) > label,
+.AddBeer_clarityRating:not(:checked) > label,
+.AddBeer_foamRating:not(:checked) > label {
   float: right;
   width: 1em;
   overflow: hidden;
@@ -43,7 +43,7 @@
   padding: 5px
 }
 
-.Home_overallRating:not(:checked) > label {
+.AddBeer_overallRating:not(:checked) > label {
   float: right;
   width: 1em;
   overflow: hidden;
@@ -54,10 +54,10 @@
   padding: 5px
 }
 
-.Home_overallRating:not(:checked) > label,
-.Home_fullnessRating:not(:checked) > label,
-.Home_clarityRating:not(:checked) > label,
-.Home_foamRating:not(:checked) > label {
+.AddBeer_overallRating:not(:checked) > label,
+.AddBeer_fullnessRating:not(:checked) > label,
+.AddBeer_clarityRating:not(:checked) > label,
+.AddBeer_foamRating:not(:checked) > label {
   &::before{
     @include fa-icon;
     @extend  .fas;
@@ -66,21 +66,21 @@
   }
 }
 
-.Home_overallRating > input:checked ~ label,
-.Home_fullnessRating > input:checked ~ label,
-.Home_clarityRating > input:checked ~ label,
-.Home_foamRating > input:checked ~ label {
+.AddBeer_overallRating > input:checked ~ label,
+.AddBeer_fullnessRating > input:checked ~ label,
+.AddBeer_clarityRating > input:checked ~ label,
+.AddBeer_foamRating > input:checked ~ label {
   color: #ffc700;
 }
 
-.Home_overallRating:not(:checked) > label:hover,
-.Home_overallRating:not(:checked) > label:hover ~ label,
-.Home_fullnessRating:not(:checked) > label:hover,
-.Home_fullnessRating:not(:checked) > label:hover ~ label,
-.Home_clarityRating:not(:checked) > label:hover,
-.Home_clarityRating:not(:checked) > label:hover ~ label,
-.Home_foamRating:not(:checked) > label:hover,
-.Home_foamRating:not(:checked) > label:hover ~ label {
+.AddBeer_overallRating:not(:checked) > label:hover,
+.AddBeer_overallRating:not(:checked) > label:hover ~ label,
+.AddBeer_fullnessRating:not(:checked) > label:hover,
+.AddBeer_fullnessRating:not(:checked) > label:hover ~ label,
+.AddBeer_clarityRating:not(:checked) > label:hover,
+.AddBeer_clarityRating:not(:checked) > label:hover ~ label,
+.AddBeer_foamRating:not(:checked) > label:hover,
+.AddBeer_foamRating:not(:checked) > label:hover ~ label {
   color: #deb217;
 }
 
@@ -92,7 +92,7 @@
   color: #c59b08;
 }*/
 
-.Home_mainContainer {
+.AddBeer_mainContainer {
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: auto;
@@ -103,7 +103,7 @@
 }
 
 @media screen and (min-width: 500px) {
-  .Home_mainContainer{
+  .AddBeer_mainContainer{
     display: grid;
     grid-template-columns: 1fr 2fr 1fr;
     grid-template-rows: auto;
@@ -112,7 +112,7 @@
             '. beerList .'
   ;
   }
-  .Home_inputForm--btn {
+  .AddBeer_inputForm--btn {
     width: 33%;
     margin: 0 auto;
   }

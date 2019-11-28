@@ -12,22 +12,22 @@
 ;
 }*/
 
-.Landing_searchForm {
+.SearchBeer_searchForm {
   //grid-area: searchForm;
   display: flex;
   justify-content: space-between;
 }
 
-.Landing_inputForm {
+.SearchBeer_inputForm {
   flex-grow: 2;
 }
 
-.Landing_inputButton {
+.SearchBeer_inputButton {
   flex-grow: .5;
   margin-left: 20px;
 }
 
-.Landing_beerName {
+.SearchBeer_beerName {
   &:before {
     @include fa-icon;
     @extend  .fas;
@@ -37,28 +37,28 @@
   }
 }
 
-.Landing_basicInfo{
+.SearchBeer_basicInfo{
   display: flex;
   flex-wrap: wrap;
 }
 
-.Landing_basicInfo > div{
+.SearchBeer_basicInfo > div{
   //flex-basis: 300px;
   flex-grow: 1;
   //width: 33%;
 }
 
-.Landing_overallRating:not(:checked) > input,
-.Landing_fullnessRating:not(:checked) > input,
-.Landing_clarityRating:not(:checked) > input,
-.Landing_foamRating:not(:checked) > input{
+.SearchBeer_overallRating:not(:checked) > input,
+.SearchBeer_fullnessRating:not(:checked) > input,
+.SearchBeer_clarityRating:not(:checked) > input,
+.SearchBeer_foamRating:not(:checked) > input{
   display: none;
 }
 
-.Landing_overallRating:not(:checked) > label,
-.Landing_fullnessRating:not(:checked) > label,
-.Landing_clarityRating:not(:checked) > label,
-.Landing_foamRating:not(:checked) > label {
+.SearchBeer_overallRating:not(:checked) > label,
+.SearchBeer_fullnessRating:not(:checked) > label,
+.SearchBeer_clarityRating:not(:checked) > label,
+.SearchBeer_foamRating:not(:checked) > label {
   //float: right;
   //width: 1em;
   //overflow: hidden;
@@ -69,10 +69,10 @@
   //padding: 5px
 }
 
-.Landing_overallRating:not(:checked) > label,
-.Landing_fullnessRating:not(:checked) > label,
-.Landing_clarityRating:not(:checked) > label,
-.Landing_foamRating:not(:checked) > label {
+.SearchBeer_overallRating:not(:checked) > label,
+.SearchBeer_fullnessRating:not(:checked) > label,
+.SearchBeer_clarityRating:not(:checked) > label,
+.SearchBeer_foamRating:not(:checked) > label {
   &::before{
     @include fa-icon;
     @extend  .fas;
@@ -81,10 +81,10 @@
   }
 }
 
-.Landing_overallRating > input:checked + label,
-.Landing_fullnessRating > input:checked + label,
-.Landing_clarityRating > input:checked + label,
-.Landing_foamRating > input:checked + label {
+.SearchBeer_overallRating > input:checked + label,
+.SearchBeer_fullnessRating > input:checked + label,
+.SearchBeer_clarityRating > input:checked + label,
+.SearchBeer_foamRating > input:checked + label {
   color: #ffc700;
 }
 

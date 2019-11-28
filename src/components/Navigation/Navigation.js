@@ -7,10 +7,10 @@ class Navigation extends Component{
     render() {
         return (
             <ul>
-                <li ><NavLink to={ROUTES.SIGN_IN}>Sign In</NavLink></li>
-                <li ><NavLink to={ROUTES.SIGN_UP}>Sign Up</NavLink></li>
-                <li ><NavLink to={ROUTES.LANDING}>Landing</NavLink></li>
-                <li ><NavLink to={ROUTES.HOME}>Home</NavLink></li>
+                {/*<li ><NavLink to={ROUTES.LANDING}>Start</NavLink></li>*/}
+                {/*<li ><NavLink to={ROUTES.LOGIN}>Login</NavLink></li>*/}
+                <li ><NavLink to={ROUTES.SEARCH_BEER}>Search for a Beer</NavLink></li>
+                <li ><NavLink to={ROUTES.ADD_BEER}>Add New Beer</NavLink></li>
             </ul>
         )
     }
