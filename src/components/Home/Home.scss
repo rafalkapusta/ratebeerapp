@@ -1,75 +1,86 @@
-.inputContainer {
+@import "../../fonts/fontawesome.scss";
+@import "../../fonts/solid.scss";
+@import "../../fonts/brands.scss";
+
+.Home_inputContainer {
   display: flex;
   justify-content: space-around;
   align-items: center;
 }
 
-.inputContainer--Score {
+.Home_inputContainer--Score {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-.inputForm {
+.Home_inputForm {
   grid-area: inputForm;
   display: flex;
   flex-direction: column;
 }
 
-.beerList {
+.Home_beerList {
   grid-area: beerList;
 }
-.overallRating:not(:checked) > input,
-.fullnessRating:not(:checked) > input,
-.clarityRating:not(:checked) > input,
-.foamRating:not(:checked) > input{
+.Home_overallRating:not(:checked) > input,
+.Home_fullnessRating:not(:checked) > input,
+.Home_clarityRating:not(:checked) > input,
+.Home_foamRating:not(:checked) > input{
   display: none;
 }
 
-.fullnessRating:not(:checked) > label,
-.clarityRating:not(:checked) > label,
-.foamRating:not(:checked) > label {
-  float:right;
-  width:1em;
-  overflow:hidden;
-  white-space:nowrap;
-  cursor:pointer;
-  font-size:30px;
-  color:#ccc;
+.Home_fullnessRating:not(:checked) > label,
+.Home_clarityRating:not(:checked) > label,
+.Home_foamRating:not(:checked) > label {
+  float: right;
+  width: 1em;
+  overflow: hidden;
+  cursor: pointer;
+  font-size: 30px;
+  margin-left: 15px;
+  color: #ccc;
+  padding: 5px
 }
 
-.overallRating:not(:checked) > label {
-  float:right;
-  width:1em;
-  overflow:hidden;
-  white-space:nowrap;
-  cursor:pointer;
-  font-size:90px;
-  color:#ccc;
+.Home_overallRating:not(:checked) > label {
+  float: right;
+  width: 1em;
+  overflow: hidden;
+  cursor: pointer;
+  font-size: 45px;
+  margin-left: 15px;
+  color: #ccc;
+  padding: 5px
 }
 
-.overallRating:not(:checked) > label:before,
-.fullnessRating:not(:checked) > label:before,
-.clarityRating:not(:checked) > label:before,
-.foamRating:not(:checked) > label:before {
-  content: '★ ';
+.Home_overallRating:not(:checked) > label,
+.Home_fullnessRating:not(:checked) > label,
+.Home_clarityRating:not(:checked) > label,
+.Home_foamRating:not(:checked) > label {
+  &::before{
+    @include fa-icon;
+    @extend  .fas;
+    content: fa-content($fa-var-beer);
+    transform: rotate(15deg);
+  }
 }
 
-.overallRating > input:checked ~ label,
-.fullnessRating > input:checked ~ label,
-.clarityRating > input:checked ~ label,
-.foamRating > input:checked ~ label {
+.Home_overallRating > input:checked ~ label,
+.Home_fullnessRating > input:checked ~ label,
+.Home_clarityRating > input:checked ~ label,
+.Home_foamRating > input:checked ~ label {
   color: #ffc700;
 }
 
-.overallRating:not(:checked) > label:hover,
-.overallRating:not(:checked) > label:hover ~ label,
-.fullnessRating:not(:checked) > label:hover,
-.fullnessRating:not(:checked) > label:hover ~ label,
-.clarityRating:not(:checked) > label:hover,
-.clarityRating:not(:checked) > label:hover ~ label,
-.foamRating:not(:checked) > label:hover,
-.foamRating:not(:checked) > label:hover ~ label {
+.Home_overallRating:not(:checked) > label:hover,
+.Home_overallRating:not(:checked) > label:hover ~ label,
+.Home_fullnessRating:not(:checked) > label:hover,
+.Home_fullnessRating:not(:checked) > label:hover ~ label,
+.Home_clarityRating:not(:checked) > label:hover,
+.Home_clarityRating:not(:checked) > label:hover ~ label,
+.Home_foamRating:not(:checked) > label:hover,
+.Home_foamRating:not(:checked) > label:hover ~ label {
   color: #deb217;
 }
 
@@ -81,7 +92,7 @@
   color: #c59b08;
 }*/
 
-.mainContainer {
+.Home_mainContainer {
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: auto;
@@ -92,7 +103,7 @@
 }
 
 @media screen and (min-width: 500px) {
-  .mainContainer{
+  .Home_mainContainer{
     display: grid;
     grid-template-columns: 1fr 2fr 1fr;
     grid-template-rows: auto;
@@ -101,7 +112,7 @@
             '. beerList .'
   ;
   }
-  .inputForm--btn {
+  .Home_inputForm--btn {
     width: 33%;
     margin: 0 auto;
   }

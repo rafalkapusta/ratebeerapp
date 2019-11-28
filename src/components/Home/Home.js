@@ -1,21 +1,20 @@
 import React, {Component} from 'react';
-import './Home.scss';
 import firebase from '../Firebase/Firebase';
+import './Home.scss';
 import Beer from '../Beer/Beer'
-// import LandingPage from "../Landing/Landing";
 
 class HomePage extends Component{
     state = {
         name: '',
         brewery: '',
         style: '',
-        foamRate: 1,
-        clarityRate: 1,
-        fullnessRate: 1,
+        foamRate: 0,
+        clarityRate: 0,
+        fullnessRate: 0,
         aroma: '',
         taste: '',
         flaws: '',
-        overallRate: 1,
+        overallRate: 0,
         beerData: []
     };
     handleChange =(e)=> {
@@ -37,18 +36,15 @@ class HomePage extends Component{
             overallRate: this.state.overallRate
         };
         beerRef.push(beer);
-        this.setState({name: '', brewery: '', style: '', foamRate: 1, clarityRate: 1, fullnessRate: 1,
-            aroma: '', taste: '', flaws: '', overallRate: 1})
+        this.setState({name: '', brewery: '', style: '', foamRate: 0, clarityRate: 0, fullnessRate: 0,
+            aroma: '', taste: '', flaws: '', overallRate: 0})
     };
     componentDidMount() {
         const beerRef = firebase.database().ref('beerData');
         beerRef.on('value', beerArr => {
             let currentBeerData = beerArr.val();
             let newBeerData = [];
-            //console.log(currentBeerData);
             for (let beer in currentBeerData) {
-                //console.log(beer);
-                //console.log(beer);
                 newBeerData.push({
                     id: beer,
                     name: currentBeerData[beer].name,
@@ -72,10 +68,9 @@ class HomePage extends Component{
     };
     render(){
         const {beerData} =this.state;
-        console.log(beerData);
         return (
-            <div className='mainContainer'>
-                <form className='inputForm' onSubmit={this.handleSubmit}>
+            <div className='Home_mainContainer'>
+                <form className='Home_inputForm' onSubmit={this.handleSubmit}>
                     <h1>Rate Beer</h1>
                     <input type="text"
                            name='name'
@@ -92,49 +87,49 @@ class HomePage extends Component{
                            placeholder='style'
                            value={this.state.style}
                            onChange={this.handleChange}/>
-                    <div className='inputContainer' >
+                    <div className='Home_inputContainer' >
                         <h3>Foam</h3>
-                        <div className='foamRating'>
+                        <div className='Home_foamRating'>
                             <input type="radio" id="foamStar5" name="foamRate" value="5" onChange={this.handleChange}/>
-                            <label htmlFor="foamStar5" title="text">5</label>
+                            <label htmlFor="foamStar5" title="text"></label>
                             <input type="radio" id="foamStar4" name="foamRate" value="4" onChange={this.handleChange}/>
-                            <label htmlFor="foamStar4" title="text">4</label>
+                            <label htmlFor="foamStar4" title="text"></label>
                             <input type="radio" id="foamStar3" name="foamRate" value="3" onChange={this.handleChange}/>
-                            <label htmlFor="foamStar3" title="text">3</label>
+                            <label htmlFor="foamStar3" title="text"></label>
                             <input type="radio" id="foamStar2" name="foamRate" value="2" onChange={this.handleChange}/>
-                            <label htmlFor="foamStar2" title="text">2</label>
+                            <label htmlFor="foamStar2" title="text"></label>
                             <input type="radio" id="foamStar1" name="foamRate" value="1" onChange={this.handleChange}/>
-                            <label htmlFor="foamStar1" title="text">1</label>
+                            <label htmlFor="foamStar1" title="text"></label>
                         </div>
                     </div>
-                    <div className='inputContainer' >
+                    <div className='Home_inputContainer' >
                         <h3>Clarity</h3>
-                        <div className='clarityRating'>
+                        <div className='Home_clarityRating'>
                             <input type="radio" id="clarityStar5" name="clarityRate" value="5" onChange={this.handleChange}/>
-                            <label htmlFor="clarityStar5" title="text">5</label>
+                            <label htmlFor="clarityStar5" title="text"></label>
                             <input type="radio" id="clarityStar4" name="clarityRate" value="4" onChange={this.handleChange}/>
-                            <label htmlFor="clarityStar4" title="text">4</label>
+                            <label htmlFor="clarityStar4" title="text"></label>
                             <input type="radio" id="clarityStar3" name="clarityRate" value="3" onChange={this.handleChange}/>
-                            <label htmlFor="clarityStar3" title="text">3</label>
+                            <label htmlFor="clarityStar3" title="text"></label>
                             <input type="radio" id="clarityStar2" name="clarityRate" value="2" onChange={this.handleChange}/>
-                            <label htmlFor="clarityStar2" title="text">2</label>
+                            <label htmlFor="clarityStar2" title="text"></label>
                             <input type="radio" id="clarityStar1" name="clarityRate" value="1" onChange={this.handleChange}/>
-                            <label htmlFor="clarityStar1" title="text">1</label>
+                            <label htmlFor="clarityStar1" title="text"></label>
                         </div>
                     </div>
-                    <div className='inputContainer' >
+                    <div className='Home_inputContainer' >
                         <h3>Fullness</h3>
-                        <div className='fullnessRating'>
+                        <div className='Home_fullnessRating'>
                             <input type="radio" id="fullnessStar5" name="fullnessRate" value="5" onChange={this.handleChange}/>
-                            <label htmlFor="fullnessStar5" title="text">5</label>
+                            <label htmlFor="fullnessStar5" title="text"></label>
                             <input type="radio" id="fullnessStar4" name="fullnessRate" value="4" onChange={this.handleChange}/>
-                            <label htmlFor="fullnessStar4" title="text">4</label>
+                            <label htmlFor="fullnessStar4" title="text"></label>
                             <input type="radio" id="fullnessStar3" name="fullnessRate" value="3" onChange={this.handleChange}/>
-                            <label htmlFor="fullnessStar3" title="text">3</label>
+                            <label htmlFor="fullnessStar3" title="text"></label>
                             <input type="radio" id="fullnessStar2" name="fullnessRate" value="2" onChange={this.handleChange}/>
-                            <label htmlFor="fullnessStar2" title="text">2</label>
+                            <label htmlFor="fullnessStar2" title="text"></label>
                             <input type="radio" id="fullnessStar1" name="fullnessRate" value="1" onChange={this.handleChange}/>
-                            <label htmlFor="fullnessStar1" title="text">1</label>
+                            <label htmlFor="fullnessStar1" title="text"></label>
                         </div>
                     </div>
                     <textarea name="aroma" id="" cols="30" rows="5" placeholder='aroma'
@@ -146,24 +141,24 @@ class HomePage extends Component{
                     <textarea name="flaws" id="" cols="30" rows="5" placeholder='flaws'
                               value={this.state.flaws}
                               onChange={this.handleChange}></textarea>
-                    <div className='inputContainer--Score' >
+                    <div className='Home_inputContainer--Score' >
                         <h3>Overall score</h3>
-                        <div className='overallRating'>
+                        <div className='Home_overallRating'>
                             <input type="radio" id="overallStar5" name="overallRate" value="5" onChange={this.handleChange}/>
-                            <label htmlFor="overallStar5" title="text">5</label>
+                            <label htmlFor="overallStar5" title="text"></label>
                             <input type="radio" id="overallStar4" name="overallRate" value="4" onChange={this.handleChange}/>
-                            <label htmlFor="overallStar4" title="text">4</label>
+                            <label htmlFor="overallStar4" title="text"></label>
                             <input type="radio" id="overallStar3" name="overallRate" value="3" onChange={this.handleChange}/>
-                            <label htmlFor="overallStar3" title="text">3</label>
+                            <label htmlFor="overallStar3" title="text"></label>
                             <input type="radio" id="overallStar2" name="overallRate" value="2" onChange={this.handleChange}/>
-                            <label htmlFor="overallStar2" title="text">2</label>
+                            <label htmlFor="overallStar2" title="text"></label>
                             <input type="radio" id="overallStar1" name="overallRate" value="1" onChange={this.handleChange}/>
-                            <label htmlFor="overallStar1" title="text">1</label>
+                            <label htmlFor="overallStar1" title="text"></label>
                         </div>
                     </div>
-                    <input type="submit" value='Add' className='inputForm--btn'/>
+                    <input type="submit" value='Add' className='Home_inputForm--btn'/>
                 </form>
-                <ul className='beerList'>
+                <ul className='Home_beerList'>
                     {beerData.map((beer,i) => <Beer key={i} beerList={beer} remove={this.removeBeer}/>)}
                 </ul>
             </div>

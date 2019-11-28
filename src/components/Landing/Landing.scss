@@ -1,8 +1,8 @@
-@import "fonts/fontawesome.scss";
-@import "fonts/solid.scss";
-@import "fonts/brands.scss";
+@import "../../fonts/fontawesome.scss";
+@import "../../fonts/solid.scss";
+@import "../../fonts/brands.scss";
 
-.mainContainer {
+/*.Landing_mainContainer {
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: auto;
@@ -10,28 +10,24 @@
           'inputForm'
           'beerList'
 ;
-}
+}*/
 
-.searchForm {
-  grid-area: searchForm;
+.Landing_searchForm {
+  //grid-area: searchForm;
   display: flex;
   justify-content: space-between;
 }
 
-.inputForm {
+.Landing_inputForm {
   flex-grow: 2;
 }
 
-.inputButton {
+.Landing_inputButton {
   flex-grow: .5;
   margin-left: 20px;
 }
 
-.beerList {
-  list-style: none;
-}
-
-.beerListName {
+.Landing_beerName {
   &:before {
     @include fa-icon;
     @extend  .fas;
@@ -41,57 +37,66 @@
   }
 }
 
-.retrieveFoamRating {
+.Landing_basicInfo{
   display: flex;
-  align-items: center;
+  flex-wrap: wrap;
 }
 
-.overallRating:not(:checked) > input,
-.fullnessRating:not(:checked) > input,
-.clarityRating:not(:checked) > input,
-.retrieveFoamRating:not(:checked) > input{
+.Landing_basicInfo > div{
+  //flex-basis: 300px;
+  flex-grow: 1;
+  //width: 33%;
+}
+
+.Landing_overallRating:not(:checked) > input,
+.Landing_fullnessRating:not(:checked) > input,
+.Landing_clarityRating:not(:checked) > input,
+.Landing_foamRating:not(:checked) > input{
   display: none;
 }
 
-.fullnessRating:not(:checked) > label,
-.clarityRating:not(:checked) > label,
-.retrieveFoamRating:not(:checked) > label {
-  float:right;
-  width:1em;
-  overflow:hidden;
-  white-space:nowrap;
-  cursor:pointer;
-  font-size:30px;
-  color:#ccc;
+.Landing_overallRating:not(:checked) > label,
+.Landing_fullnessRating:not(:checked) > label,
+.Landing_clarityRating:not(:checked) > label,
+.Landing_foamRating:not(:checked) > label {
+  //float: right;
+  //width: 1em;
+  //overflow: hidden;
+  //cursor: pointer;
+  font-size: 20px;
+  margin-left: 15px;
+  color: #ccc;
+  //padding: 5px
 }
 
-.overallRating:not(:checked) > label:before,
-.fullnessRating:not(:checked) > label:before,
-.clarityRating:not(:checked) > label:before,
-.retrieveFoamRating:not(:checked) > label:before {
-  content: '★ ';
+.Landing_overallRating:not(:checked) > label,
+.Landing_fullnessRating:not(:checked) > label,
+.Landing_clarityRating:not(:checked) > label,
+.Landing_foamRating:not(:checked) > label {
+  &::before{
+    @include fa-icon;
+    @extend  .fas;
+    content: fa-content($fa-var-beer);
+    transform: rotate(15deg);
+  }
 }
 
-.overallRating > input:checked ~ label,
-.fullnessRating > input:checked ~ label,
-.clarityRating > input:checked ~ label,
-.retrieveFoamRating > input:checked ~ label {
+.Landing_overallRating > input:checked + label,
+.Landing_fullnessRating > input:checked + label,
+.Landing_clarityRating > input:checked + label,
+.Landing_foamRating > input:checked + label {
   color: #ffc700;
 }
 
-@media screen and (min-width: 500px) {
-  .mainContainer{
+/*@media screen and (min-width: 500px) {
+  .Landing_mainContainer{
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: auto;
     grid-template-areas:
             'searchForm searchForm searchForm'
-            '. beerList .'
+            'basicInfo basicInfo basicInfo'
   ;
   }
-  /*.inputForm--btn {
-    width: 33%;
-    margin: 0 auto;
-  }*/
-}
+}*/
 
