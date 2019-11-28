@@ -9,8 +9,8 @@ class Beer extends Component {
     render() {
         return (
             <li>
-                <h1>{this.props.beerList.name}</h1>
-                <button onClick={this.handleRemove}>Remove</button>
+                <h2 className='Beer_name'>{this.props.beerList.name}</h2>
+                <button className='Beer_remove-btn' onClick={this.handleRemove}>Remove</button>
             </li>
         )
     }

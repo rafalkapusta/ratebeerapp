@@ -65,7 +65,7 @@ class LandingPage extends Component{
         //console.log(this.state.user);
         const {user} = this.state;
         if(!user) {
-            return (<p>You must be logged in to search beers</p>)
+            return (<h1 className='SearchBeer_warn'>You must be logged in to search beers</h1>)
         }
         else {
             return (
@@ -77,11 +77,12 @@ class LandingPage extends Component{
                     <div className='SearchBeer_basicInfo'>
                         {filteredData.map(beer => {
                             return (
-                            <div key={beer.id}>
-                                <h1 className='SearchBeer_beerName'>Name: {beer.name}</h1>
-                                <h2>Style: {beer.style}</h2>
-                                <h2>Brewery: {beer.brewery}</h2>
-                                <h3 className='SearchBeer_foamRating'>Foam:
+                            <div className='SearchBeer_beerContainer' key={beer.id}>
+                                <h2 className='SearchBeer_beerName'>{beer.name}</h2>
+                                <p>Aroma: {beer.aroma}</p>
+                                <p>Taste: {beer.taste}</p>
+                                <p>Flaws: {beer.flaws}</p>
+                                <h4 className='SearchBeer_foamRating'>Foam:
                                     <input type="radio" id={beer.id +'1'} name="" value={beer.foamRate}
                                            checked={beer.foamRate>0? true:false}/>
                                     <label htmlFor={beer.id +'1'} title="text"></label>
@@ -97,8 +98,8 @@ class LandingPage extends Component{
                                     <input type="radio" id={beer.id +'5'} name="" value={beer.foamRate}
                                            checked={beer.foamRate>4? true:false}/>
                                     <label htmlFor={beer.id +'5'} title="text"></label>
-                                </h3>
-                                <h3 className='SearchBeer_clarityRating'>Clarity:
+                                </h4>
+                                <h4 className='SearchBeer_clarityRating'>Clarity:
                                     <input type="radio" id={beer.id +'6'} name="" value={beer.clarityRate}
                                            checked={beer.clarityRate>0? true:false}/>
                                     <label htmlFor={beer.id +'6'} title="text"></label>
@@ -114,8 +115,8 @@ class LandingPage extends Component{
                                     <input type="radio" id={beer.id +'10'} name="" value={beer.clarityRate}
                                            checked={beer.clarityRate>4? true:false}/>
                                     <label htmlFor={beer.id +'10'} title="text"></label>
-                                </h3>
-                                <h3 className='SearchBeer_fullnessRating'>Fullness:
+                                </h4>
+                                <h4 className='SearchBeer_fullnessRating'>Fullness:
                                     <input type="radio" id={beer.id +'11'} name="" value={beer.fullnessRate}
                                            checked={beer.fullnessRate>0? true:false}/>
                                     <label htmlFor={beer.id +'11'} title="text"></label>
@@ -131,8 +132,8 @@ class LandingPage extends Component{
                                     <input type="radio" id={beer.id +'15'} name="" value={beer.fullnessRate}
                                            checked={beer.fullnessRate>4? true:false}/>
                                     <label htmlFor={beer.id +'15'} title="text"></label>
-                                </h3>
-                                <h3 className='SearchBeer_overallRating'>Overall:
+                                </h4>
+                                <h2 className='SearchBeer_overallRating'>Overall:
                                     <input type="radio" id={beer.id +'16'} name="" value={beer.overallRate}
                                            checked={beer.overallRate>0? true:false}/>
                                     <label htmlFor={beer.id +'16'} title="text"></label>
@@ -148,7 +149,7 @@ class LandingPage extends Component{
                                     <input type="radio" id={beer.id +'20'} name="" value={beer.overallRate}
                                            checked={beer.overallRate>4? true:false}/>
                                     <label htmlFor={beer.id +'20'} title="text"></label>
-                                </h3>
+                                </h2>
                             </div>
                             )}
                         )}

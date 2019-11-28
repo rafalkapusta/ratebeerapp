@@ -1,16 +1,18 @@
 import React, {Component} from 'react';
 import {NavLink} from 'react-router-dom'
 
+import './Navigation.scss'
+
 import * as ROUTES from '../../constants/routes'
 
 class Navigation extends Component{
     render() {
         return (
-            <ul>
-                {/*<li ><NavLink to={ROUTES.LANDING}>Start</NavLink></li>*/}
+            <ul className='Navigation_navContainer'>
+                <li ><NavLink to={ROUTES.LANDING} className='navlink'>Start</NavLink></li>
+                <li ><NavLink to={ROUTES.SEARCH_BEER} className='navlink'>Search for a Beer</NavLink></li>
+                <li ><NavLink to={ROUTES.ADD_BEER} className='navlink'>Add New Beer</NavLink></li>
                 {/*<li ><NavLink to={ROUTES.LOGIN}>Login</NavLink></li>*/}
-                <li ><NavLink to={ROUTES.SEARCH_BEER}>Search for a Beer</NavLink></li>
-                <li ><NavLink to={ROUTES.ADD_BEER}>Add New Beer</NavLink></li>
             </ul>
         )
     }

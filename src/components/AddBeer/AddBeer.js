@@ -23,7 +23,7 @@ class HomePage extends Component{
       this.setState({[e.target.name]: e.target.value})
     };
     handleSubmit =(e)=> {
-        e.preventDefault();
+        //e.preventDefault();
         const beerRef = firebase.database().ref('beerData');
         const beer = {
             name: this.state.name,
@@ -77,7 +77,7 @@ class HomePage extends Component{
         const {beerData} = this.state;
         const {user} = this.state;
         if(!user) {
-            return (<p>You must be logged in to add beers</p>)
+            return (<h1 className='AddBeer_warn'>You must be logged in to add beers</h1>)
         }
         else {
             return (
@@ -170,9 +170,9 @@ class HomePage extends Component{
                         </div>
                         <input type="submit" value='Add' className='AddBeer_inputForm--btn'/>
                     </form>
-                    <ul className='AddBeer_beerList'>
+                    {/*<ul className='AddBeer_beerList'>
                         {beerData.map((beer,i) => <Beer key={i} beerList={beer} remove={this.removeBeer}/>)}
-                    </ul>
+                    </ul>*/}
                 </div>
             )
         }

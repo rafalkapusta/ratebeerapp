@@ -5,7 +5,8 @@ import {HashRouter as Router, Route} from 'react-router-dom';
 import Navigation from '../Navigation/Navigation';
 import AddBeer from '../AddBeer/AddBeer';
 import SearchBeer from '../SearchBeer/SearchBeer';
-//import Login from '../Login/Login';
+import Login from '../Login/Login';
+import Landing from "../Landing/Landing";
 
 import * as ROUTES from '../../constants/routes';
 import {auth, provider} from "../Firebase/Firebase";
@@ -24,7 +25,7 @@ class App extends Component{
             }
         });
     }
-    Logout =(e)=> {
+    Logout =()=> {
         auth.signOut()
             .then(() => {
                 this.setState({
@@ -34,7 +35,7 @@ class App extends Component{
                 });
             });
     };
-    Login =(e)=> {
+    Login =()=> {
         auth.signInWithPopup(provider)
             .then((result) => {
                 //console.log('result',result);
@@ -44,31 +45,22 @@ class App extends Component{
                     user: user,
                     username: user.displayName,
                     email: user.emailVerified
-                });
+                },()=>console.log(this.state));
             });
     };
     render() {
         return(
-            <>
-            <div>
-                <h1>{this.state.username? this.state.username : 'Login' }</h1>
-                <div className='App_login'>
-                {this.state.user?
-                    <button className='App_login-btn' onClick={this.Logout}>Log Out</button>
-                    :
-                    <button className='App_login-btn' onClick={this.Login}>Log In</button>}
-                {this.state.user? <img className='App_userPhoto' src={this.state.user.photoURL}/> : null}
-                </div>
-            </div>
+            <div className='App'>
             <Router>
                 <div>
                     <Navigation/>
-                    {/*<Route exact path={ROUTES.LANDING} component={Landing}/>*/}
+                    <Route exact path={ROUTES.LANDING} render={() => <Landing login={this.Login} logout={this.Logout} userApp={this.state}/>}/>
+                    {/*<Route path={ROUTES.LOGIN} render={() => <Login login={this.Login} logout={this.Logout} appState={this.state} />}/>*/}
                     <Route path={ROUTES.SEARCH_BEER} render={() => <SearchBeer userInfo={this.state.user} />}/>
                     <Route path={ROUTES.ADD_BEER} render={() => <AddBeer userInfo={this.state.user} />} />
                 </div>
             </Router>
-            </>
+            </div>
         )
     }
 }

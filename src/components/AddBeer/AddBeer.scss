@@ -22,6 +22,7 @@
 
 .AddBeer_beerList {
   grid-area: beerList;
+  list-style: none;
 }
 .AddBeer_overallRating:not(:checked) > input,
 .AddBeer_fullnessRating:not(:checked) > input,
@@ -39,7 +40,7 @@
   cursor: pointer;
   font-size: 30px;
   margin-left: 15px;
-  color: #ccc;
+  color: #fff;
   padding: 5px
 }
 
@@ -50,7 +51,7 @@
   cursor: pointer;
   font-size: 45px;
   margin-left: 15px;
-  color: #ccc;
+  color: #fff;
   padding: 5px
 }
 
@@ -81,7 +82,7 @@
 .AddBeer_clarityRating:not(:checked) > label:hover ~ label,
 .AddBeer_foamRating:not(:checked) > label:hover,
 .AddBeer_foamRating:not(:checked) > label:hover ~ label {
-  color: #deb217;
+  color: #ffc700;
 }
 
 /*.foamRating > input:checked + label:hover,
@@ -100,6 +101,13 @@
           'inputForm'
           'beerList'
 ;
+}
+
+.AddBeer_warn {
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+  color: #a4a9ac;
 }
 
 @media screen and (min-width: 500px) {

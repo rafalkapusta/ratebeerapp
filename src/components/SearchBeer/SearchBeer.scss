@@ -32,7 +32,7 @@
     @include fa-icon;
     @extend  .fas;
     content: fa-content($fa-var-beer);
-    color: #deb217;
+    color: #ffc700;
     margin-right: 20px;
   }
 }
@@ -40,6 +40,7 @@
 .SearchBeer_basicInfo{
   display: flex;
   flex-wrap: wrap;
+  //margin-left: 20px;
 }
 
 .SearchBeer_basicInfo > div{
@@ -65,7 +66,7 @@
   //cursor: pointer;
   font-size: 20px;
   margin-left: 15px;
-  color: #ccc;
+  color: #fff;
   //padding: 5px
 }
 
@@ -88,6 +89,18 @@
   color: #ffc700;
 }
 
+.SearchBeer_warn {
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+  color: #a4a9ac;
+}
+
+.SearchBeer_beerContainer {
+  margin-top: 20px;
+  background: silver;
+  opacity: .9;
+}
 /*@media screen and (min-width: 500px) {
   .Landing_mainContainer{
     display: grid;

@@ -1,0 +1,25 @@
+@import "../../fonts/fontawesome.scss";
+@import "../../fonts/solid.scss";
+@import "../../fonts/brands.scss";
+
+.Beer_name {
+  &:before {
+    @include fa-icon;
+    @extend  .fas;
+    content: fa-content($fa-var-beer);
+    color: #ffc700;
+    margin-right: 20px;
+  }
+}
+
+.Beer_remove-btn {
+  border: none;
+  border-radius: 3px;
+  padding: 10px;
+  background: #ffc700;
+  color: white;
+  font-weight: bold;
+  &:hover {
+    background: #deb217;
+  }
+}
