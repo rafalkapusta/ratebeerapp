@@ -5,6 +5,7 @@ import {HashRouter as Router, Route} from 'react-router-dom';
 import Navigation from '../Navigation/Navigation';
 import AddBeer from '../AddBeer/AddBeer';
 import SearchBeer from '../SearchBeer/SearchBeer';
+//import LoginBtn from '../LoginBtn/LoginBtn';
 import Login from '../Login/Login';
 import Landing from "../Landing/Landing";
 
@@ -53,8 +54,9 @@ class App extends Component{
             <div className='App'>
             <Router>
                 <div>
+                    {/*<Landing userApp={this.state}/>*/}
                     <Navigation/>
-                    <Route exact path={ROUTES.LANDING} render={() => <Landing login={this.Login} logout={this.Logout} userApp={this.state}/>}/>
+                    <Route exact path={ROUTES.LANDING} render={() => <Login login={this.Login} logout={this.Logout} userApp={this.state}/>}/>
                     {/*<Route path={ROUTES.LOGIN} render={() => <Login login={this.Login} logout={this.Logout} appState={this.state} />}/>*/}
                     <Route path={ROUTES.SEARCH_BEER} render={() => <SearchBeer userInfo={this.state.user} />}/>
                     <Route path={ROUTES.ADD_BEER} render={() => <AddBeer userInfo={this.state.user} />} />

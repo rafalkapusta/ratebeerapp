@@ -170,9 +170,9 @@ class HomePage extends Component{
                         </div>
                         <input type="submit" value='Add' className='AddBeer_inputForm--btn'/>
                     </form>
-                    {/*<ul className='AddBeer_beerList'>
+                    <ul className='AddBeer_beerList'>
                         {beerData.map((beer,i) => <Beer key={i} beerList={beer} remove={this.removeBeer}/>)}
-                    </ul>*/}
+                    </ul>
                 </div>
             )
         }

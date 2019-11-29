@@ -110,6 +110,19 @@
   color: #a4a9ac;
 }
 
+input, textarea{
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  margin: 10px;
+  background: #ccc;
+  opacity: .9;
+}
+
+input:not([type='submit']) {
+  height: 15px;
+  padding: 15px;
+}
+
 @media screen and (min-width: 500px) {
   .AddBeer_mainContainer{
     display: grid;

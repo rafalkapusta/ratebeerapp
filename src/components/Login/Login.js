@@ -32,15 +32,15 @@ class Login extends Component{
                     <h1>
                         {this.state.user? this.state.user.displayName : null }
                     </h1>
-                    <div>
+                    <div className='Login_loginImg'>
+                        {this.state.user? <img className='Login_userPhoto' src={this.state.user.photoURL}/> : null}
+                    </div>
+                </div>
+                <div className='Login_login-btn'>
                         {this.state.user?
                         <button className='Login_login-btn' onClick={this.handleLogout}>Log Out</button>
                         :
-                        <button className='Login_login-btn' onClick={this.handleLogin}>Log In</button>}
-                    </div>
-                </div>
-                <div className='Login_loginImg'>
-                    {this.state.user? <img className='Login_userPhoto' src={this.state.user.photoURL}/> : null}
+                        <button className='Login_login-btn' onClick={this.handleLogin}>Log In with Google Account</button>}
                 </div>
             </div>
         )

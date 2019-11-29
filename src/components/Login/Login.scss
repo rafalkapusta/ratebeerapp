@@ -1,15 +1,15 @@
 .Login_loginContainer {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
-  //height: 100vh;
+  //height: 100px;
   margin-top: 10px;
 }
 .Login_loginImg {
   width: 3em;
   height: 3em;
   background-size: contain;
-  //margin-right: 20px;
+  margin-left: 20px;
 }
 .Login_userPhoto {
   width: 3em;
@@ -18,8 +18,10 @@
 }
 .Login_loginUser {
   display: flex;
-  flex-direction: column;
+  //flex-direction: column;
+  align-items: center;
   justify-content: space-evenly;
+  margin-right: 20px;
 }
 
 .Login_loginUser h1 {

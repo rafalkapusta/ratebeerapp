@@ -8,9 +8,9 @@ body {
   -moz-osx-font-smoothing: grayscale;
   background-image: url("./pictures/background.jpg");
   background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  height: 100vh;
+  background-position: center 33%;
+  /* background-repeat: no-repeat; */
+  /* height: 100vh; */
   font-size: 20px;
 }
 
