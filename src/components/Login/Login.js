@@ -36,7 +36,7 @@ class Login extends Component{
                         {this.state.user? <img className='Login_userPhoto' src={this.state.user.photoURL}/> : null}
                     </div>
                 </div>
-                <div className='Login_login-btn'>
+                <div>
                         {this.state.user?
                         <button className='Login_login-btn' onClick={this.handleLogout}>Log Out</button>
                         :
