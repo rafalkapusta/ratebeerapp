@@ -13,7 +13,7 @@ class Navigation extends Component{
             <ul className='Navigation_navContainer'>
                 <li ><NavLink to={ROUTES.LANDING} className='navlink'>Start</NavLink></li>
                 <li ><NavLink to={ROUTES.SEARCH_BEER} className='navlink'>Search for a Beer</NavLink></li>
-                <li ><NavLink to={ROUTES.ADD_BEER} className='navlink'>Add New Beer</NavLink></li>
+                <li ><NavLink to={ROUTES.ADD_BEER} className='navlink'>Add or Remove Beer</NavLink></li>
                 {/*<li ><NavLink to={ROUTES.LOGIN}>Login</NavLink></li>*/}
             </ul>
         )

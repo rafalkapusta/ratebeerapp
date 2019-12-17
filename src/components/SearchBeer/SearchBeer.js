@@ -7,7 +7,8 @@ class LandingPage extends Component{
       search: '',
       beerData: [],
       filteredData: [],
-      user: this.props.userInfo
+      user: this.props.userInfo,
+      error: false
     };
     componentDidMount() {
         const beerRef = firebase.database().ref('beerData');
@@ -53,15 +54,28 @@ class LandingPage extends Component{
         this.state.beerData.forEach(beer => {
             //console.log(query)
             if(beer.name.toLowerCase() === query || beer.brewery.toLowerCase() === query ||
-                beer.style.toLowerCase() === query || beer.overallRate.toLowerCase() === query){
+                beer.style.toLowerCase() === query){
                 result.push(beer)
             }
         });
-        console.log(result);
-        this.setState({filteredData: result});
+        this.setState({filteredData: result, search: ''});
+        console.log(this.state.filteredData.length);
+        if(result.length === 0) {
+            this.setState({error: true});
+        } else {
+            this.setState({error: false});
+        }
     };
     render() {
+        let info;
         const {filteredData} = this.state;
+        if(this.state.error) {
+            info = <h1>No data in database</h1>
+        } else {
+            info = null;
+        }
+        //const {error} = this.state;
+        //console.log(filteredData);
         //console.log(this.state.user);
         const {user} = this.state;
         if(!user) {
@@ -69,6 +83,8 @@ class LandingPage extends Component{
         }
         else {
             return (
+                <>
+                {info}
                 <div className='SearchBeer_mainContainer'>
                     <form action="" className='SearchBeer_searchForm'>
                         <input className='SearchBeer_inputForm' type="text" name='search' value={this.state.search} onChange={this.handleChange}/>
@@ -155,6 +171,7 @@ class LandingPage extends Component{
                         )}
                     </div>
                 </div>
+                </>
         )
         }
     }

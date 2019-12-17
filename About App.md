@@ -7,3 +7,4 @@ and search firebese for prevviously added beers.
 
 Search query can be beer name, brewery name, style of beer (for example ipa) or overal score.
 
+![Rate beer app demo](rateBeer.gif)
