@@ -68,6 +68,7 @@ class HomePage extends Component{
                 this.setState({user: user});
             }
         });
+        console.log(this.state.user);
     }
     removeBeer =(id)=> {
         const beerRef = firebase.database().ref(`/beerData/${id}`);

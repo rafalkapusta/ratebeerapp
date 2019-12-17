@@ -4,6 +4,8 @@ import {NavLink} from 'react-router-dom'
 import './Navigation.scss'
 
 import * as ROUTES from '../../constants/routes'
+import LoginBtn from "../LoginBtn/LoginBtn";
+import Login from "../Login/Login";
 
 class Navigation extends Component{
     render() {
