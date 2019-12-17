@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/ratebeerapp/static/css/main.18d08597.chunk.css",
+    "main.js": "/ratebeerapp/static/js/main.7085e0c5.chunk.js",
+    "main.js.map": "/ratebeerapp/static/js/main.7085e0c5.chunk.js.map",
+    "runtime-main.js": "/ratebeerapp/static/js/runtime-main.b2cad65b.js",
+    "runtime-main.js.map": "/ratebeerapp/static/js/runtime-main.b2cad65b.js.map",
+    "static/js/2.6332f17c.chunk.js": "/ratebeerapp/static/js/2.6332f17c.chunk.js",
+    "static/js/2.6332f17c.chunk.js.map": "/ratebeerapp/static/js/2.6332f17c.chunk.js.map",
+    "index.html": "/ratebeerapp/index.html",
+    "precache-manifest.a6395cd0f0be2878c080dd097d5a0529.js": "/ratebeerapp/precache-manifest.a6395cd0f0be2878c080dd097d5a0529.js",
+    "service-worker.js": "/ratebeerapp/service-worker.js",
+    "static/css/main.18d08597.chunk.css.map": "/ratebeerapp/static/css/main.18d08597.chunk.css.map",
+    "static/media/index.css": "/ratebeerapp/static/media/background.99e710bb.jpg",
+    "static/media/SearchBeer.scss": "/ratebeerapp/static/media/fa-solid-900.c2801fb4.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.b2cad65b.js",
+    "static/js/2.6332f17c.chunk.js",
+    "static/css/main.18d08597.chunk.css",
+    "static/js/main.7085e0c5.chunk.js"
+  ]
+}
