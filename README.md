@@ -6,13 +6,12 @@ https://rafalkapusta.github.io/ratebeerapp
 
 ////////////////////////////////////////////////////////////////////////
 
-Simple App developed with React and firebase. 
+Simple web app developed with React and Firebase.
 
 In order to use its features you have to log in via google account.
 
-When logged you can rate beer ,add new beer to firebase, remove beer from firebase
-and search firebese for prevviously added beers.
+When logged you can rate beer ,add new beers, remove them or search firebase for previously added beers.
 
-Search query can be beer name, brewery name, or style of beer (for example ipa).
+Search query can be beer name, brewery name, or style of a beer.
 
 ![Rate beer app demo](rateBeer.gif)
